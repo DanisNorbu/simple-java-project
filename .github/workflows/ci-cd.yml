@@ -62,7 +62,7 @@ jobs:
       # Шаг 3: Добавление сервера в список доверенных хостов
       - name: Add server to known_hosts
         run: |
-          ssh-keyscan -H ${{ secrets.SSH_SERVER }} >> ~/.ssh/known_hosts  # Добавляет сервер в known_hosts
+          echo "${{ secrets.KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
       # Шаг 4: Копирование файлов на сервер
       - name: Copy files to the server
